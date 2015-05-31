@@ -14,9 +14,9 @@ A series of simple projects for learning and review.
 
 <strong class="bbc">Check if Palindrome</strong> – Checks if the string entered by the user is a palindrome. That is that it reads the same forwards as backwards like “racecar”
 
-<h2>In Progress</h2>
-
 <strong class="bbc">Count Words in a String</strong> – Counts the number of individual words in a string. For added complexity read these strings in from a text file and generate a summary.
+
+<h2>In Progress</h2>
 
 <strong class="bbc">Text Editor</strong> – Notepad style application that can open, edit, and save text documents. Add syntax highlighting and other features.
  
