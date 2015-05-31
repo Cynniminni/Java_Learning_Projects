@@ -1,3 +1,6 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -11,18 +14,71 @@ import java.util.Scanner;
 public class CountWordsInAString {
 
 	public static void main(String[] args) {
-		String input;
-		Scanner scan = new Scanner(System.in);		
+		String input;		
+		int choice;
+		int totalWords;		
+		HashMap<String, Integer> hm;
+		Scanner scan = new Scanner(System.in);
+		boolean running = true;
 		
-		System.out.println("Enter a string:");
-		input = scan.nextLine();
-		
-		int totalWords = countTotalWords(input);
-		HashMap<String, Integer> hm = wordSummary(input);
-		
-		System.out.println("Total number of words: " + totalWords);		
-		printWordSummary(hm);
-		
+		while (running) {
+			System.out.println("Enter \'1\' to read from user input, \'2\' to read from text file, \'3\' to exit:");
+			choice = scan.nextInt();
+			
+			switch (choice) {
+				case 1:
+					//===============================================
+					//	reading from user input
+					//===============================================
+					System.out.println("Please enter a string:");
+					scan.nextLine();
+					input = scan.nextLine();
+					
+					totalWords = countTotalWords(input);
+					hm = wordSummary(input);
+					
+					System.out.println("Total number of words: " + totalWords);		
+					printWordSummary(hm);
+					break;
+				case 2:
+					//===============================================
+					//	reading from text file
+					//===============================================
+					System.out.println("Please enter a filepath:");
+					scan.nextLine();
+					input = scan.nextLine();
+					
+					try {
+						FileReader fr = new FileReader(input);
+						BufferedReader br = new BufferedReader(fr);
+						String text = "";
+						
+						while (br.ready()) {
+							text += br.readLine();
+						}
+										
+						br.close();
+						
+						totalWords = countTotalWords(text);
+						hm = wordSummary(text);
+						
+						System.out.println("Total number of words: " + totalWords);		
+						printWordSummary(hm);
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					break;
+				case 3:
+					running = false;
+					break;
+				default:
+					System.out.println("Invalid choice. Please choose again.");					
+					break;
+			}//end switch		
+		}//end while		
+
+		System.out.println("Program ending.");
 	}//end main
 	
 	//counts total number of words by tracking whitespaces
