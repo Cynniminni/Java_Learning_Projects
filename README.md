@@ -16,8 +16,16 @@ A series of simple projects for learning and review.
 
 <strong class="bbc">Count Words in a String</strong> – Counts the number of individual words in a string. For added complexity read these strings in from a text file and generate a summary.
 
+<strong class="bbc">Text Editor</strong> – Notepad style application that can open, edit, and save text documents. Add syntax highlighting and other features.
+
 <h2>In Progress</h2>
 
-<strong class="bbc">Text Editor</strong> – Notepad style application that can open, edit, and save text documents. Add syntax highlighting and other features.
- 
-...
+RSS Feed Creator – A program which can read in text from other sources and put it in RSS or Atom news format for syndication.
+
+Post it Notes Program – A program where you can add text reminders and post them. You can have the program also add popup reminders.
+
+Quote Tracker (market symbols etc) – A program which can go out and check the current value of stocks for a list of symbols entered by the user. The user can set how often the stocks are checked and the program can show green up and red down arrows to show which direction the stock value has moved.
+
+Guestbook / Journal – A simple application that allows people to add comments or write journal entries. It can allow comments or not and timestamps for all entries. Could also be made into a shout box.
+
+News Ticker and Game Scores – A program which sits on your desktop and aggregates news and game scores from various sources on the net. It then scrolls them across the screen on regular intervals.
